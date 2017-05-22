@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "972391499255",
+    "firebase_url": "https://project-6258768266940770428.firebaseio.com",
+    "project_id": "project-6258768266940770428",
+    "storage_bucket": "project-6258768266940770428.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972391499255:android:d3107167f9b0f688",
+        "android_client_info": {
+          "package_name": "br.com.viniciusalmada.hidrantesslz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972391499255-0nsa4h7v4ebsj13ul8lhbebt0fvsb2o9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdTSTbA7lLmWm6rM38lQUH5ZPqYP2zoTY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
