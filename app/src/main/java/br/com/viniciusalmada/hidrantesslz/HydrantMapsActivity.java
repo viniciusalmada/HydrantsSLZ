@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -29,6 +28,8 @@ import br.com.viniciusalmada.hidrantesslz.domains.Hydrant;
 public class HydrantMapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
 
     private GoogleMap mMap;
+    private Circle oldCircle;
+    private Circle circle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,6 @@ public class HydrantMapsActivity extends FragmentActivity implements OnMapReadyC
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
-
 
     /**
      * Manipulates the map once available.
@@ -75,7 +75,7 @@ public class HydrantMapsActivity extends FragmentActivity implements OnMapReadyC
                     mMap.addMarker(new MarkerOptions().position(ll).title(h.getName()));
                     Log.d("TAG", "onDataChange: " + ds.getValue().toString());
                 }
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastLat,12f));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastLat, 12f));
                 mMap.setOnMarkerClickListener(HydrantMapsActivity.this);
                 mMap.setOnInfoWindowClickListener(HydrantMapsActivity.this);
             }
@@ -85,16 +85,7 @@ public class HydrantMapsActivity extends FragmentActivity implements OnMapReadyC
 
             }
         });
-       /* mMap = googleMap;
-
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
     }
-
-    Circle oldCircle;
-    Circle circle;
 
     @Override
     public boolean onMarkerClick(Marker marker) {
